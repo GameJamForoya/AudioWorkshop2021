@@ -45,7 +45,7 @@ public class Song : MonoBehaviour
     {
         while (_audioSource.volume < maxVolume)
         {
-            _audioSource.volume += fadeSpeed * Time.deltaTime;
+            _audioSource.volume = Mathf.Min(_audioSource.volume + fadeSpeed * Time.deltaTime, maxVolume);
             yield return null;
         }
     }
