@@ -2852,9 +2852,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f29ce729526041ccabb50bb8e959c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxVolume: 0.115
+  maxVolume: 0.1
   fadeTimeInSeconds: 0.5
-  startSong: {fileID: 0}
 --- !u!1001 &1096325779
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3134,7 +3133,7 @@ GameObject:
   - component: {fileID: 1253756679}
   - component: {fileID: 1253756678}
   m_Layer: 0
-  m_Name: Room 3
+  m_Name: Song - Room 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39099,7 +39098,7 @@ GameObject:
   - component: {fileID: 2029275735}
   - component: {fileID: 2029275734}
   m_Layer: 0
-  m_Name: Room 2
+  m_Name: Song - Room 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39239,7 +39238,7 @@ GameObject:
   - component: {fileID: 2031446950}
   - component: {fileID: 2031446949}
   m_Layer: 0
-  m_Name: Room 1
+  m_Name: Song - Room 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
