@@ -4,6 +4,8 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Song : MonoBehaviour
 {
+    private const float AccuracyFactor = 0.01f;
+
     private AudioSource _audioSource;
 
     // Start is called before the first frame update
@@ -34,19 +36,23 @@ public class Song : MonoBehaviour
 
     private IEnumerator FadeOutRoutine(float fadeSpeed)
     {
-        while (_audioSource.volume > 0)
+        while (_audioSource.volume > AccuracyFactor)
         {
-            _audioSource.volume -= fadeSpeed * Time.deltaTime;
+            _audioSource.volume = Mathf.Lerp(_audioSource.volume, 0, fadeSpeed * Time.deltaTime);
             yield return null;
         }
+
+        _audioSource.volume = 0.0f;
     }
 
     private IEnumerator FadeInRoutine(float fadeSpeed, float maxVolume)
     {
-        while (_audioSource.volume < maxVolume)
+        while (_audioSource.volume < maxVolume - AccuracyFactor)
         {
-            _audioSource.volume = Mathf.Min(_audioSource.volume + fadeSpeed * Time.deltaTime, maxVolume);
+            _audioSource.volume = Mathf.Lerp(_audioSource.volume, maxVolume, fadeSpeed * Time.deltaTime);
             yield return null;
         }
+
+        _audioSource.volume = maxVolume;
     }
 }
